@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>Taller de JSON</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234a78dc'/%3E%3Cpath d='M13 8c-2.5 0-3.5 1.3-3.5 3.5v2.5c0 1.3-.8 2-2 2 1.2 0 2 .7 2 2v2.5c0 2.2 1 3.5 3.5 3.5M19 8c2.5 0 3.5 1.3 3.5 3.5v2.5c0 1.3.8 2 2 2-1.2 0-2 .7-2 2v2.5c0 2.2-1 3.5-3.5 3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>
+  // El tema claro es el predeterminado. Si se eligió el oscuro, se aplica
+  // antes de pintar la página para que no parpadee. La clave es nueva para
+  // que no cuenten las elecciones guardadas cuando el tema seguía al sistema.
+  try {
+    if (localStorage.getItem('taller-json-tema-v2') === 'dark') document.documentElement.dataset.theme = 'dark';
+  } catch (e) { }
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Ir al ejercicio</a>
+<div class="page" id="top">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Taller de JSON, inicio">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="6" stroke="currentColor" stroke-width="1.3"/><path d="M13 9.5c-2 0-3 1-3 3v2c0 1-.6 1.5-1.6 1.5 1 0 1.6.5 1.6 1.5v2c0 2 1 3 3 3M19 9.5c2 0 3 1 3 3v2c0 1 .6 1.5 1.6 1.5-1 0-1.6.5-1.6 1.5v2c0 2-1 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.3" fill="currentColor"/></svg>
+      <span>Taller de JSON<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Secciones del taller">
+      <a href="#progreso">Avance</a>
+      <a href="#main">Ejercicio</a>
+      <a href="#editor">Editor</a>
+    </nav>
+    <div class="topbar-actions">
+      <button type="button" id="btn-theme" class="btn btn-icon" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="theme-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <svg class="theme-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="overview section-frame" aria-labelledby="page-title">
+    <div class="overview-copy">
+      <p class="eyebrow">[ TALLER INTERACTIVO ]</p>
+      <h1 id="page-title">Aprende JSON,<br>escribiéndolo<span>.</span></h1>
+      <p class="overview-description">Veinte ejercicios, de la sintaxis básica<br>hasta JSON Schema y JSON Patch.</p>
+    </div>
+    <div class="overview-detail">
+      <div class="overview-art" aria-hidden="true">
+        <svg viewBox="0 0 340 132" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path class="art-guide" d="M22 32h296M22 108h296M65 18v104M170 10v112M276 18v104"/>
+          <path class="art-line art-route" pathLength="1" d="M89 75h22a12 12 0 0 0 12-12v-3h15"/>
+          <path class="art-line art-route r2" pathLength="1" d="M202 72h18a12 12 0 0 0 12-12h26"/>
+          <g class="art-doc">
+            <rect class="art-block" x="41" y="52" width="48" height="45" rx="4"/>
+            <path class="art-line" d="M52 63c-2.5 0-3.5 1.2-3.5 3.5v4.5c0 2-1 3.5-3 3.5 2 0 3 1.5 3 3.5v4.5c0 2.3 1 3.5 3.5 3.5M78 63c2.5 0 3.5 1.2 3.5 3.5v4.5c0 2 1 3.5 3 3.5-2 0-3 1.5-3 3.5v4.5c0 2.3-1 3.5-3.5 3.5M57 68h16M57 74.5h11M57 81h14"/>
+          </g>
+          <g class="art-panel">
+            <rect class="art-block" x="138" y="38" width="64" height="56" rx="8"/>
+            <path class="art-line" d="M138 50h64M162 62h28M162 72h22M162 82h26"/>
+            <circle class="art-dot" cx="146" cy="44" r="1.4"/>
+            <circle class="art-dot" cx="151" cy="44" r="1.4"/>
+            <circle class="art-dot" cx="156" cy="44" r="1.4"/>
+            <path class="art-line art-tick" pathLength="1" d="M147 62l3 3 5-6"/>
+            <path class="art-line art-tick t2" pathLength="1" d="M147 72l3 3 5-6"/>
+            <circle class="art-node" cx="151" cy="82" r="2.5"/>
+          </g>
+          <g class="art-seal">
+            <path class="art-block" d="M268 74l-5 18 7-3 4 6 2-19ZM284 74l5 18-7-3-4 6-2-19Z"/>
+            <circle class="art-block" cx="276" cy="60" r="18"/>
+            <circle class="art-line" cx="276" cy="60" r="13"/>
+            <path class="art-line art-tick t3" pathLength="1" d="M269 60l5 5 9-9"/>
+          </g>
+          <circle class="art-node" cx="111" cy="75" r="3"/>
+          <circle class="art-node" cx="232" cy="60" r="3"/>
+        </svg>
+        <div class="art-steps"><span>Escribes</span><span>Se valida</span><span>Aprendes</span></div>
+      </div>
+      <p class="overview-text">Escribes el JSON, el taller lo valida mientras tecleas y te explica en español qué falta o qué está mal.</p>
+    </div>
+  </section>
+
+  <section class="kpis section-frame" id="progreso" aria-label="Tu avance">
+    <div class="tile hero">
+      <p class="tile-label" id="overall-label">Tu avance</p>
+      <p class="tile-value" id="overall-text">0 de 20</p>
+      <div class="meter" id="meter" role="progressbar" aria-labelledby="overall-label" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"><i id="meter-fill"></i></div>
+      <p class="tile-sub" id="overall-sub"></p>
+    </div>
+  </section>
+
+  <div class="layout section-frame" id="layout">
+    <div class="side-nav">
+      <button type="button" class="btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav">
+        <span>Ver ejercicios</span><span class="nav-toggle-count" id="nav-toggle-count">0/20</span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Lista de ejercicios"></nav>
+    </div>
+
+    <main class="main" id="main" tabindex="-1">
+      <div class="ex-meta">
+        <span class="pill" id="lvl-pill"></span>
+        <span class="ex-count" id="ex-count"></span>
+      </div>
+      <h2 id="ex-title"></h2>
+      <p class="prompt" id="ex-prompt"></p>
+      <div class="refs" id="ex-refs" hidden></div>
+
+      <div class="workspace">
+        <section class="editor-card" id="editor" aria-label="Editor" data-state="neutral">
+          <div class="editor-bar">
+            <span class="file">respuesta.json</span>
+            <div class="tools">
+              <button type="button" class="btn small" id="btn-format">Formatear</button>
+              <button type="button" class="btn small" id="btn-reset">Reiniciar</button>
+            </div>
+          </div>
+          <div class="editor">
+            <pre class="gutter" id="gutter" aria-hidden="true">1</pre>
+            <textarea id="code" wrap="off" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" aria-label="Escribe tu JSON aquí"></textarea>
+          </div>
+          <div class="status neutral" id="status" role="status" aria-live="polite"></div>
+        </section>
+
+        <aside class="side">
+          <section class="panel" aria-labelledby="h-checks">
+            <header class="panel-head">
+              <h3 id="h-checks">Requisitos</h3>
+              <span class="panel-count" id="checks-count"></span>
+            </header>
+            <div class="panel-body">
+              <ul class="checks" id="checks"></ul>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="h-preview">
+            <header class="panel-head">
+              <h3 id="h-preview">Así lo lee JSON</h3>
+            </header>
+            <div class="panel-body">
+              <pre class="preview empty" id="preview"></pre>
+              <div class="legend" aria-hidden="true">
+                <span class="t-k">clave</span><span class="t-s">"texto"</span><span class="t-n">123</span><span class="t-b">true</span><span class="t-z">null</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn" id="btn-prev"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 5 7 10l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Anterior</button>
+        <button type="button" class="btn" id="btn-hint" aria-expanded="false">Ver pista</button>
+        <button type="button" class="btn" id="btn-solution" aria-expanded="false">Ver solución</button>
+        <span class="grow"></span>
+        <button type="button" class="btn primary" id="btn-next">Siguiente<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m8 5 5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+
+      <div class="reveal" id="hint" hidden>
+        <h3>Pista</h3>
+        <p class="hint" id="hint-text"></p>
+      </div>
+      <div class="reveal" id="solution" hidden>
+        <h3>Solución de referencia</h3>
+        <pre id="solution-code"></pre>
+        <div class="row">
+          <button type="button" class="btn small" id="btn-use">Usar en el editor</button>
+          <button type="button" class="btn small" id="btn-copy">Copiar</button>
+        </div>
+      </div>
+      <div class="done-card" id="done" hidden>
+        <p class="eyebrow">[ BIEN HECHO ]</p>
+        <h3 id="done-title">Ejercicio resuelto</h3>
+        <p class="learn" id="done-text"></p>
+        <button type="button" class="btn primary" id="btn-next-2">Siguiente ejercicio<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m8 5 5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="page-footer"><span>Taller de JSON<span class="brand-dot">.</span></span><span>Escribe, valida y aprende.</span><a href="#top">Volver arriba <span aria-hidden="true">↑</span></a></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toast-text"></span></div>
+
+<script src="ejercicios.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
