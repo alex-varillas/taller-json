@@ -2,6 +2,8 @@
 
 Página web estática con 20 ejercicios para practicar JSON. No tiene dependencias ni paso de compilación: se abre `index.html` en el navegador o se sirve la carpeta con `npm start`.
 
+Está publicada con GitHub Pages en https://alex-varillas.github.io/taller-json/, desde la raíz de la rama `main`. Cada push a `main` la actualiza. El archivo `.nojekyll` hace que GitHub publique los archivos tal cual.
+
 ## Archivos
 
 - `index.html`: estructura de la página y carga de los scripts.

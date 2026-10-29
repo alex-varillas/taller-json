@@ -2,7 +2,9 @@
 
 Taller interactivo para aprender JSON escribiéndolo. Son 20 ejercicios que van de la sintaxis básica hasta JSON Schema y JSON Patch. Escribes en un editor, la página valida tu JSON mientras tecleas y te explica **en español** qué falta o qué está mal.
 
-No necesita instalación, cuenta ni conexión a internet: es una página estática sin dependencias.
+**Pruébalo en línea:** [alex-varillas.github.io/taller-json](https://alex-varillas.github.io/taller-json/)
+
+No necesita instalación ni cuenta. Es una página estática sin dependencias, así que también funciona descargada y sin conexión.
 
 ![Taller de JSON en tema claro: avance por nivel, lista de ejercicios y el editor mostrando dos errores explicados en español](docs/captura-claro.png)
 
@@ -34,7 +36,11 @@ No necesita instalación, cuenta ni conexión a internet: es una página estáti
 
 ## Empezar
 
-### Opción 1: abrir el archivo
+### Opción 1: usarlo en línea
+
+Abre [alex-varillas.github.io/taller-json](https://alex-varillas.github.io/taller-json/). Está publicado con GitHub Pages y se actualiza solo con cada cambio en la rama `main`.
+
+### Opción 2: abrir el archivo
 
 Descarga el repositorio y abre `index.html` con doble clic. No hace falta nada más.
 
@@ -42,7 +48,7 @@ Descarga el repositorio y abre `index.html` con doble clic. No hace falta nada m
 git clone https://github.com/alex-varillas/taller-json.git
 ```
 
-### Opción 2: servirlo en local
+### Opción 3: servirlo en local
 
 Si tienes [Node.js](https://nodejs.org/) 18 o superior, puedes servir la carpeta con un servidor local:
 
