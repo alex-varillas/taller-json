@@ -2,6 +2,7 @@
   "name": "taller-json",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "Taller interactivo de 20 ejercicios para practicar JSON, del nivel básico al experto.",
   "scripts": {
     "test": "node test/verificar-soluciones.js",

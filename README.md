@@ -20,6 +20,7 @@ No necesita instalación ni cuenta. Es una página estática sin dependencias, a
 - [Añadir o cambiar ejercicios](#añadir-o-cambiar-ejercicios)
 - [Diseño y accesibilidad](#diseño-y-accesibilidad)
 - [Ideas pendientes](#ideas-pendientes)
+- [Licencia](#licencia)
 
 ## Qué ofrece
 
@@ -117,7 +118,16 @@ El progreso se guarda solo en tu navegador, con `localStorage`. No se envía a n
 | `taller-json-v1` | Ejercicios resueltos, borradores y el ejercicio en el que estabas. |
 | `taller-json-tema-v2` | El tema elegido, si cambiaste al oscuro. |
 
-Para empezar de cero, borra los datos del sitio desde la configuración de tu navegador.
+**¿Cuánto dura?** No caduca. El taller no borra nada por tiempo, y `localStorage` no es la caché del navegador: tus ejercicios resueltos siguen ahí aunque cierres la página o reinicies el equipo. Solo se pierden en estos casos:
+
+- Si borras los datos de navegación marcando **cookies y datos de sitios**. Borrar solo la caché (imágenes y archivos) no los toca.
+- Si usas una ventana privada o de incógnito: se borran al cerrarla.
+- En Safari (iPhone, iPad y Mac): si pasas 7 días usando Safari sin entrar al taller, Safari borra lo que la página guardó.
+- Si el dispositivo se queda sin espacio, el navegador puede liberar los datos de sitios poco usados.
+
+Además, el progreso es de cada navegador y cada dispositivo. Si abres el taller en el móvil, empiezas de cero allí. La versión en línea y el archivo descargado también llevan progresos separados.
+
+Para empezar de cero a propósito, borra los datos del sitio desde la configuración de tu navegador.
 
 ## Estructura del proyecto
 
@@ -178,6 +188,7 @@ Algunas reglas:
 - Los requisitos deben comprobar la estructura y el sentido de los datos, no comparar con una respuesta exacta.
 - Hay funciones de ayuda al principio de `ejercicios.js`: `isObj`, `isStr`, `sameKeys`, `same`, `validDate`, `validDateTime` y otras.
 - Después de cualquier cambio, ejecuta `npm test`.
+- Si reordenas o quitas ejercicios, cambia la clave `taller-json-v1` en `app.js` (por ejemplo, a `taller-json-v2`). El progreso de todos empezará de cero una vez, pero no se mezclarán avances de ejercicios distintos.
 
 ## Diseño y accesibilidad
 
@@ -200,3 +211,7 @@ El archivo `CLAUDE.md` explica la estructura y las reglas del proyecto a [Claude
 - "Añade tres ejercicios de JSON Schema con `oneOf` y `pattern`."
 - "Agrega un botón para exportar e importar mi progreso."
 - "Crea un modo repaso que mezcle los ejercicios que ya resolví."
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Alex Varillas. Puedes usar, copiar, modificar y distribuir el código, también con fines comerciales, siempre que conserves el aviso de copyright y el texto de la licencia.
