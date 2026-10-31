@@ -11,7 +11,7 @@ Está publicada con GitHub Pages en https://alex-varillas.github.io/taller-json/
 - `ejercicios.js`: los datos. Define `EX` (lista de ejercicios) y `LEVELS` (los 5 niveles), más las funciones auxiliares de los validadores.
 - `app.js`: la lógica de la interfaz (editor, validación en vivo, diagnóstico de errores en español, progreso, pistas y soluciones).
 - `test/verificar-soluciones.js`: comprueba cada ejercicio. Se ejecuta con `npm test`.
-- `docs/`: capturas que usa el README. Si cambia mucho la interfaz, conviene rehacerlas.
+- `docs/`: capturas que usa el README y `vista-previa.png`, la imagen de 1200×630 que se ve al compartir el enlace (etiquetas `og:` en `index.html`). Su fuente es `docs/fuentes/vista-previa.html`. Si cambia mucho la interfaz, conviene rehacerlas.
 
 ## Cómo está hecho un ejercicio
 

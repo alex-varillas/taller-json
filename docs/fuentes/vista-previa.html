@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Vista previa</title>
+<style>
+  :root {
+    --backdrop: #e5ebf5; --page: #edf1f8; --surface: #fff; --ink: #10131c; --ink-2: #5b6478; --ink-3: #586682;
+    --border: #d9e1ee; --accent: #4a78dc; --accent-ink: #2f5fc4; --glow: #d6e3fb;
+    --l1: #1f7262; --l2: #4b5fcc; --l3: #8a590b; --l4: #7450c0; --l5: #a4447a;
+    --ui: 'Segoe UI Variable', 'Segoe UI', -apple-system, sans-serif;
+    --mono: 'SFMono-Regular', Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background: var(--backdrop); color: var(--ink); font-family: var(--ui); -webkit-font-smoothing: antialiased; }
+  .frame {
+    position: absolute; top: 0; bottom: 0; left: 40px; right: 40px;
+    display: grid; grid-template-rows: 88px 1fr 104px;
+    border-inline: 1px solid var(--border); background: var(--page);
+  }
+  .top {
+    display: flex; align-items: center; justify-content: space-between; padding: 0 48px;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; font: 600 22px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+  .brand svg { width: 38px; height: 38px; color: var(--accent); }
+  .dot { color: var(--accent); }
+  .url { color: var(--ink-2); font: 17px/1 var(--mono); letter-spacing: .02em; }
+  .hero {
+    display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 40px; padding: 0 48px 0 56px;
+    background: radial-gradient(ellipse at 96% 100%, var(--glow), transparent 58%);
+  }
+  .eyebrow { color: var(--accent-ink); font: 15px/1.5 var(--mono); letter-spacing: 1.6px; }
+  h1 { margin-top: 16px; font-size: 84px; font-weight: 400; line-height: 1.02; letter-spacing: -.065em; }
+  h1 span { color: var(--accent); }
+  .sub { margin-top: 22px; color: var(--ink-2); font-size: 24px; line-height: 1.45; }
+  .art svg { display: block; width: 100%; }
+  .steps {
+    display: grid; grid-template-columns: 38% 24% 38%; margin-top: 4px;
+    color: var(--ink-3); font: 13px/1.5 var(--mono); letter-spacing: 1.4px; text-align: center; text-transform: uppercase;
+  }
+  .art-guide { stroke: var(--border); stroke-width: 1; }
+  .art-line { stroke: var(--accent); stroke-width: 1.6; }
+  .art-block, .art-node { stroke: var(--accent); fill: var(--surface); stroke-width: 1.6; }
+  .art-dot { fill: var(--accent); }
+  .levels { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--surface); border-top: 1px solid var(--border); }
+  .lv { display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 0 28px; }
+  .lv + .lv { border-left: 1px solid var(--border); }
+  .lv:first-child { padding-left: 56px; }
+  .lv b { display: flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 500; }
+  .lv b::before { content: ''; width: 11px; height: 11px; border-radius: 3px; background: var(--c); }
+  .lv span { color: var(--ink-3); font: 13px/1.4 var(--mono); letter-spacing: .6px; text-transform: uppercase; }
+  .sq { position: absolute; width: 7px; height: 7px; background: var(--accent); }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="top">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="3" width="26" height="26" rx="6" stroke="currentColor" stroke-width="1.3"/><path d="M13 9.5c-2 0-3 1-3 3v2c0 1-.6 1.5-1.6 1.5 1 0 1.6.5 1.6 1.5v2c0 2 1 3 3 3M19 9.5c2 0 3 1 3 3v2c0 1 .6 1.5 1.6 1.5-1 0-1.6.5-1.6 1.5v2c0 2-1 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.3" fill="currentColor"/></svg>
+      <span>Taller de JSON<span class="dot">.</span></span>
+    </div>
+    <div class="url">alex-varillas.github.io/taller-json</div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">[ 20 EJERCICIOS INTERACTIVOS ]</p>
+      <h1>Aprende JSON,<br>escribiéndolo<span>.</span></h1>
+      <p class="sub">Validación en vivo y errores explicados<br>en español, de la sintaxis a JSON Schema.</p>
+    </div>
+    <div class="art">
+      <svg viewBox="0 0 340 132" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path class="art-guide" d="M22 32h296M22 108h296M65 18v104M170 10v112M276 18v104"/>
+        <path class="art-line" d="M89 75h22a12 12 0 0 0 12-12v-3h15"/>
+        <path class="art-line" d="M202 72h18a12 12 0 0 0 12-12h26"/>
+        <rect class="art-block" x="41" y="52" width="48" height="45" rx="4"/>
+        <path class="art-line" d="M52 63c-2.5 0-3.5 1.2-3.5 3.5v4.5c0 2-1 3.5-3 3.5 2 0 3 1.5 3 3.5v4.5c0 2.3 1 3.5 3.5 3.5M78 63c2.5 0 3.5 1.2 3.5 3.5v4.5c0 2 1 3.5 3 3.5-2 0-3 1.5-3 3.5v4.5c0 2.3-1 3.5-3.5 3.5M57 68h16M57 74.5h11M57 81h14"/>
+        <rect class="art-block" x="138" y="38" width="64" height="56" rx="8"/>
+        <path class="art-line" d="M138 50h64M162 62h28M162 72h22M162 82h26"/>
+        <circle class="art-dot" cx="146" cy="44" r="1.4"/><circle class="art-dot" cx="151" cy="44" r="1.4"/><circle class="art-dot" cx="156" cy="44" r="1.4"/>
+        <path class="art-line" d="M147 62l3 3 5-6M147 72l3 3 5-6"/>
+        <circle class="art-node" cx="151" cy="82" r="2.5"/>
+        <path class="art-block" d="M268 74l-5 18 7-3 4 6 2-19ZM284 74l5 18-7-3-4 6-2-19Z"/>
+        <circle class="art-block" cx="276" cy="60" r="18"/>
+        <circle class="art-line" cx="276" cy="60" r="13"/>
+        <path class="art-line" d="M269 60l5 5 9-9"/>
+        <circle class="art-node" cx="111" cy="75" r="3"/>
+        <circle class="art-node" cx="232" cy="60" r="3"/>
+      </svg>
+      <div class="steps"><span>Escribes</span><span>Se valida</span><span>Aprendes</span></div>
+    </div>
+  </div>
+
+  <div class="levels">
+    <div class="lv" style="--c: var(--l1)"><b>Básico</b><span>Sintaxis y tipos</span></div>
+    <div class="lv" style="--c: var(--l2)"><b>Intermedio</b><span>Anidación</span></div>
+    <div class="lv" style="--c: var(--l3)"><b>Práctico</b><span>Datos reales</span></div>
+    <div class="lv" style="--c: var(--l4)"><b>Avanzado</b><span>Esquemas</span></div>
+    <div class="lv" style="--c: var(--l5)"><b>Experto</b><span>Estándares</span></div>
+  </div>
+</div>
+<!-- Cuadros de acento donde las líneas horizontales cruzan la columna -->
+<i class="sq" style="left: 37px; top: 85px"></i><i class="sq" style="right: 37px; top: 85px"></i>
+<i class="sq" style="left: 37px; top: 523px"></i><i class="sq" style="right: 37px; top: 523px"></i>
+</body>
+</html>

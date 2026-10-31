@@ -139,7 +139,7 @@ taller-json/
 ├── ejercicios.js                  Los 20 ejercicios, los 5 niveles y las ayudas de los validadores
 ├── test/
 │   └── verificar-soluciones.js    Prueba que cada ejercicio está bien construido
-├── docs/                          Capturas de este README
+├── docs/                          Capturas del README e imagen para compartir el enlace
 ├── CLAUDE.md                      Guía del proyecto para Claude Code
 └── package.json                   Scripts npm start y npm test
 ```
